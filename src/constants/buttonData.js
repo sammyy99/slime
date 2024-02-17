@@ -1,0 +1,1 @@
+export const buttons = ['All','Games','Computer Programming','News','Politics','Cricket','Soccer','Cricket News','PC','Coding','Front-end'];

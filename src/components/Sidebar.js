@@ -2,8 +2,8 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div className='w-20 bg-slate-400'>
-      Sidebar
+    <div className='w-24 bg-black text-white'>
+      
     </div>
   )
 }

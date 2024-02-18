@@ -4,7 +4,7 @@ import {buttons} from '../constants/buttonData'
 
 const ButtonList = () => {
   return (
-    <div className='flex my-2 mx-6'>
+    <div className='flex my-2 mx-2'>
       {buttons.map((name)=>{
         return <Button key={name} name = {name}/>
       })}

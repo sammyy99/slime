@@ -5,17 +5,19 @@ import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 import LibraryMusicIcon from "@mui/icons-material/LibraryMusic";
 import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
 import DownloadIcon from "@mui/icons-material/Download";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className="w-24 bg-black text-white flex justify-center">
+    <div className="w-24 bg-black text-white flex justify-center text-sm">
       <ul>
-        <li className="py-4 px-2 my-2 hover:bg-gray-800 rounded-lg hover:cursor-pointer">
+        <Link to={'/'}><li className="py-4 px-2 my-2 hover:bg-gray-800 rounded-lg hover:cursor-pointer">
           <div className="flex justify-center">
             <HomeIcon />
           </div>
           <div className="flex justify-center text-sm">Home</div>
         </li>
+        </Link>
         <li className="py-4 my-2 hover:bg-gray-800 rounded-lg hover:cursor-pointer">
           <div className="flex justify-center">
             <VideoLibraryIcon />

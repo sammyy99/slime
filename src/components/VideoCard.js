@@ -1,8 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const VideoCard = ({ info }) => {
-  console.log(info);
-  const { snippet, statistics } = info;
+    const SidebarDetailed = useSelector((store)=>{return store.header?.sidebar})
+    const { snippet, statistics } = info;
 
   const formatViews = (count) => {
     // formating views to millions format
@@ -18,7 +19,7 @@ const VideoCard = ({ info }) => {
   };
 
   return (
-    <div className="w-[21rem] min-w-[18rem] mr-4 mt-5 hover:cursor-pointer hover:w-[22rem] transition-all duration-300">
+    <div className={`${SidebarDetailed?'w-[19rem]':'w-[21rem]'} min-w-[16rem] mr-4 mt-5 mb-4 hover:cursor-pointer hover:w-[22rem] transition-all duration-300>`}>
       <div className="mb-2">
         <img className="rounded-lg" alt="" src={snippet.thumbnails?.maxres?.url}></img>
       </div>

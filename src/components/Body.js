@@ -9,7 +9,7 @@ const Body = () => {
   const sidebarToggle = useSelector((store)=>{return store.header?.sidebar})
 
   return (
-    <div className='flex w-screen'>
+    <div className='flex'>
       {!sidebarToggle ? <Sidebar/>:<SidebarDetailed/>}
       <MainContainer/>
     </div>

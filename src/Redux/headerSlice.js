@@ -9,8 +9,11 @@ const headerSlice = createSlice({
         sidebarToggle:(state,action)=>{
             state.sidebar = !state.sidebar
         },
+        sidebarhide:(state,action)=>{
+            state.sidebar = false;
+        },
     }
 })
 
 export default headerSlice.reducer;
-export const {sidebarToggle} = headerSlice.actions;
+export const {sidebarToggle , sidebarhide} = headerSlice.actions;

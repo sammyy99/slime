@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <div className="w-full bg-red-800]">
+    <div className="w-full bg-black h-fit]">
       
       <ButtonList />
 

@@ -30,7 +30,7 @@ const Header = () => {
     const data = await fetch(youtubeSearchApi + squery);
     const json = await data.json();
     setSearchSuggestions(json[1]);
-    console.log("API called for"+searchQuery)
+    //console.log("API called for"+searchQuery)
 
     dispatch(updateCache({[searchQuery]:json[1]})) // saving all the search results to use as cache
   };

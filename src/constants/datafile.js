@@ -3073,3 +3073,33 @@ export const videosApiData = [
         }
     }
 ]
+
+export const commentsData = [
+    {
+        name:"Sammy",
+        text:"Hello ! Slime is great !!",
+        replies: []
+    },
+    {
+        name:"Sammy",
+        text:"Hello ! Slime is great !!",
+        replies: [   {
+            name:"Sammy",
+            text:"Hello ! Slime is great !!",
+            replies: [   {
+                name:"Sammy",
+                text:"Hello ! Slime is great !!",
+                replies: []
+            },]
+        },   {
+            name:"Sammy",
+            text:"Hello ! Slime is great !!",
+            replies: []
+        },]
+    },
+    {
+        name:"Sammy",
+        text:"Hello ! Slime is great !!",
+        replies: []
+    },
+]

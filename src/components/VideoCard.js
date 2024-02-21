@@ -19,7 +19,7 @@ const VideoCard = ({ info }) => {
   };
 
   return (
-    <div className={`${SidebarDetailed?'w-[19rem]':'w-[21rem]'} min-w-[16rem] mr-4 mt-5 mb-4 hover:cursor-pointer hover:w-[22rem] transition-all duration-300>`}>
+    <div className={`${SidebarDetailed?'w-[19rem] hover:w-[20rem]':'w-[21rem] hover:w-[22rem]'} min-w-[16rem] mr-4 mt-5 mb-4 hover:cursor-pointer  transition-all duration-300>`}>
       <div className="mb-2">
         <img className="rounded-lg" alt="" src={snippet.thumbnails?.maxres?.url}></img>
       </div>

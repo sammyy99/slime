@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import headerReducer from './headerSlice'
+import searchReducer from "./searchSlice";
+
 
 const appStore = configureStore(
     {
     reducer:{
-        header : headerReducer
+        header : headerReducer,
+        search : searchReducer,
     }
 }
 );

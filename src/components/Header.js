@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { sidebarToggle } from "../Redux/headerSlice";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -7,12 +7,14 @@ import Face5Icon from "@mui/icons-material/Face5";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import { youtubeSearchApi } from "../constants/urls";
+import { updateCache } from "../Redux/searchSlice";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
   const [showSearchResults, setShowSearchResults] = useState(false)
 
+  const cache = useSelector((store)=>{return store.search});
   const search = useRef(null);
   const dispatch = useDispatch();
 
@@ -29,10 +31,20 @@ const Header = () => {
     const json = await data.json();
     setSearchSuggestions(json[1]);
     console.log("API called for"+searchQuery)
+
+    dispatch(updateCache({[searchQuery]:json[1]})) // saving all the search results to use as cache
   };
 
   useEffect(() => {
-   const timer = setTimeout(()=>youtubeSuggestion(searchQuery),200) 
+   const timer = setTimeout(()=>
+   {
+    if(cache[searchQuery]){   // checking if cache has search query 
+      setSearchSuggestions(cache[searchQuery]) // setting suggestions as per cache key:value
+    }else{
+      youtubeSuggestion(searchQuery)  // doing ususal call of youtube search and setting the suggestions 
+    }  
+  },200) 
+
    return () => clearTimeout(timer);
   }, [searchQuery]);
 

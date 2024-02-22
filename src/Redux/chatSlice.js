@@ -9,9 +9,9 @@ const chatSlice = createSlice({
     reducers:{
         addMessage:(state,action)=>{
             if(state.message.length>liveChatCount){
-                state.message.shift()
+                state.message.splice(30,1)
             }
-            state.message.push(action.payload);
+            state.message.unshift(action.payload);
         },
     }
 });

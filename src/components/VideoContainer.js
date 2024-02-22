@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-//import {YoutubeListApi} from '../constants/urls'
+import {YoutubeListApi} from '../constants/urls'
 import VideoCard from './VideoCard'
-import {videosApiData} from '../constants/datafile'
+//import {videosApiData} from '../constants/datafile'
 import { Link } from 'react-router-dom'
 
 const VideoContainer = () => {
@@ -9,11 +9,11 @@ const VideoContainer = () => {
   const [videosData, setVideosdata] = useState()
 
   const YouttubeData = async ()=>{
-    //const data = await fetch(YoutubeListApi);
-   // const json = await data.json()
-   // console.log(json.items);
-   // setVideosdata(json.items)
-    setVideosdata(videosApiData)
+    const data = await fetch(YoutubeListApi);
+    const json = await data.json()
+    console.log(json.items);
+    setVideosdata(json.items)
+   // setVideosdata(videosApiData)
   }
 
   useEffect(()=>{

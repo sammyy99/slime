@@ -12,7 +12,7 @@ import { updateCache } from "../Redux/searchSlice";
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState([]);
-  const [showSearchResults, setShowSearchResults] = useState(false)
+  const [showSearchResults, setShowSearchResults] = useState(false) // used for focus in blur out feature
 
   const cache = useSelector((store)=>{return store.search});
   const search = useRef(null);
@@ -75,7 +75,7 @@ const Header = () => {
             onChange={() => {
               handleSearch();
             }}
-            className="px-4 py-2 w-full rounded-tl-full rounded-bl-full border border-gray-800 bg-black col-span-7"
+            className="px-4 py-2 w-full rounded-tl-full rounded-bl-full border border-gray-800 bg-black col-span-7 outline-none"
             type="text"
             placeholder="Search here"
             onFocus={()=>setShowSearchResults(true)}

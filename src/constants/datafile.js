@@ -3089,12 +3089,24 @@ export const commentsData = [
             replies: [   {
                 name:"Sammy",
                 text:"Hello ! Slime is great !!",
-                replies: []
+                replies: [{
+                    name:"Sammy",
+                    text:"Hello ! Slime is great !!",
+                    replies: [{
+                        name:"Sammy",
+                        text:"Hello ! Slime is great !!",
+                        replies: []
+                    },]
+                },]
             },]
         },   {
             name:"Sammy",
             text:"Hello ! Slime is great !!",
-            replies: []
+            replies: [{
+                name:"Sammy",
+                text:"Hello ! Slime is great !!",
+                replies: []
+            },]
         },]
     },
     {

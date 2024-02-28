@@ -6,7 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Face5Icon from "@mui/icons-material/Face5";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-import { youtubeSearchApi } from "../constants/urls";
+import { proxyUrl, youtubeSearchApi } from "../constants/urls";
 import { updateCache } from "../Redux/searchSlice";
 
 const Header = () => {
@@ -27,7 +27,8 @@ const Header = () => {
   };
 
   const youtubeSuggestion = async (squery) => {
-    const data = await fetch(youtubeSearchApi + squery);
+    const url = `${youtubeSearchApi+squery}`
+    const data = await fetch(url);
     const json = await data.json();
     setSearchSuggestions(json[1]);
     //console.log("API called for"+searchQuery)
@@ -82,7 +83,7 @@ const Header = () => {
             onBlur={()=>setShowSearchResults(false)}
           ></input>
           <button className="px-4 rounded-tr-full rounded-br-full border border-gray-800 border-l-0 bg-gray-800 text-white col-span-1">
-            <SearchIcon />
+            <SearchIcon/>
           </button>
         </div>
 
